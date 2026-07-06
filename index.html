@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cloverdale Cuisine — Authentic Kerala Cuisine, Mysuru</title>
+<meta name="description" content="Cloverdale Cuisine — Experience the Authentic Taste of Kerala. Fine Kerala dining in Mysuru, Karnataka. Dine-in, takeaway, kerbside pickup & no-contact delivery.">
+<meta property="og:title" content="Cloverdale Cuisine — Experience the Authentic Taste of Kerala">
+<meta property="og:description" content="Authentic Kerala Cuisine in Mysuru. ⭐ 4.6/5 (1000+ reviews).">
+<meta property="og:type" content="restaurant.restaurant">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,400;1,9..144,500&family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- ============ LOADING SCREEN ============ -->
+<div id="loader" aria-hidden="true">
+  <div class="loader-inner">
+    <svg class="loader-leaf" viewBox="0 0 100 100" width="64" height="64">
+      <path d="M50 10 C 20 25, 15 55, 50 90 C 85 55, 80 25, 50 10 Z" fill="none" stroke="#D4AF37" stroke-width="2.5"/>
+      <path d="M50 14 L50 86 M50 30 L35 22 M50 30 L65 22 M50 48 L32 40 M50 48 L68 40 M50 66 L34 60 M50 66 L66 60" stroke="#D4AF37" stroke-width="1.4" fill="none"/>
+    </svg>
+    <span class="loader-word">CLOVERDALE</span>
+    <div class="loader-bar"><div class="loader-bar-fill"></div></div>
+  </div>
+</div>
+
+<!-- ============ SCROLL PROGRESS ============ -->
+<div id="scrollProgress"></div>
+
+<!-- ============ COOKIE CONSENT ============ -->
+<div id="cookieBanner" class="cookie-banner" role="dialog" aria-label="Cookie consent">
+  <p>We use cookies to make your ordering experience smoother — no data is sold, ever.</p>
+  <div class="cookie-actions">
+    <button class="btn btn-ghost btn-sm" id="cookieDecline">Decline</button>
+    <button class="btn btn-solid btn-sm" id="cookieAccept">Accept</button>
+  </div>
+</div>
+
+<!-- ============ TOASTS ============ -->
+<div id="toastContainer" aria-live="polite"></div>
+
+<!-- ============ HEADER / NAV ============ -->
+<header id="siteHeader">
+  <div class="container nav-inner">
+    <a href="#home" class="logo">
+      <svg width="36" height="36" viewBox="0 0 100 100" fill="none"><path d="M50 8 C 22 24, 16 56, 50 92 C 84 56, 78 24, 50 8 Z" stroke="#D4AF37" stroke-width="3"/><path d="M50 12 L50 88 M50 32 L34 24 M50 32 L66 24 M50 52 L30 44 M50 52 L70 44 M50 72 L32 66 M50 72 L68 66" stroke="#D4AF37" stroke-width="1.6"/></svg>
+      <span>Cloverdale<span class="logo-sub">CUISINE · MYSURU</span></span>
+    </a>
+    <nav class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#menu">Menu</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#reservations">Reservations</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+        <svg id="themeIcon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+      </button>
+      <button class="cart-btn" id="cartToggle" aria-label="Open cart">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/></svg>
+        <span class="cart-count" id="cartCount">0</span>
+      </button>
+      <a href="#reservations" class="btn btn-solid btn-sm">Reserve Table</a>
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Open menu">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#home">Home</a>
+  <a href="#about">About</a>
+  <a href="#menu">Menu</a>
+  <a href="#gallery">Gallery</a>
+  <a href="#reservations">Reservations</a>
+  <a href="#reviews">Reviews</a>
+  <a href="#contact">Contact</a>
+</div>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="home">
+  <div class="hero-bg" style="background-image:url('https://images.unsplash.com/photo-1631452180519-c014fe946bc7?q=80&w=1800&auto=format&fit=crop')"></div>
+  <div class="hero-scrim"></div>
+  <svg class="hero-fronds" width="0" height="0"></svg>
+  <div class="container hero-content">
+    <p class="eyebrow hero-eyebrow">Kerala Fine Dining · Est. Mysuru</p>
+    <h1 class="hero-title">
+      <span class="line"><span>Experience the</span></span>
+      <span class="line"><span>Authentic <em>Taste</em> of Kerala</span></span>
+    </h1>
+    <div class="hero-meta">
+      <div class="hero-meta-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.26L21 9.27l-4.5 4.4L17.8 21 12 17.77 6.2 21l1.3-7.33L3 9.27l6.1-1.01z"/></svg> 4.6 / 5 · 1000+ Reviews</div>
+      <div class="hero-meta-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> 10 AM – 10 PM Daily</div>
+      <div class="hero-meta-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg> Vani Vilas Mohalla, Mysuru</div>
+    </div>
+    <div class="hero-actions">
+      <a href="#reservations" class="btn btn-solid">Reserve a Table</a>
+      <a href="#menu" class="btn btn-outline">Order Online</a>
+    </div>
+  </div>
+  <div class="scroll-cue"><span>Scroll</span><div class="scroll-cue-line"></div></div>
+</section>
+
+<div class="kera-divider"><svg viewBox="0 0 1440 90" preserveAspectRatio="none"><path d="M0,50 C 240,90 480,10 720,45 C 960,80 1200,15 1440,50 L1440,0 L0,0 Z" fill="var(--bg)"/></svg></div>
+
+<!-- ============ ABOUT ============ -->
+<section class="about section-pad" id="about">
+  <div class="container about-grid">
+    <div class="about-visual reveal">
+      <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=1000&auto=format&fit=crop" alt="Traditional Kerala thali served on a banana leaf">
+      <div class="about-badge">
+        <div><strong>25+</strong><span>Years of Recipes</span></div>
+        <div><strong>100%</strong><span>Fresh Daily</span></div>
+      </div>
+    </div>
+    <div class="about-copy reveal">
+      <p class="eyebrow">Our Story</p>
+      <h2>A slice of God's Own Country, in Mysuru</h2>
+      <p>Cloverdale Cuisine began with a simple idea: bring the unhurried, coconut-scented cooking of Kerala's backwaters to Mysuru's table, exactly as it's made back home — slow-roasted spices, banana-leaf service, and recipes passed down rather than written down.</p>
+      <p>Every curry starts with fresh coconut ground that morning, our fish comes in before sunrise, and our kitchen runs on the same hygiene and hospitality standards we'd want for our own family — because most days, it is our family cooking it.</p>
+      <div class="timeline">
+        <div class="timeline-item">
+          <span>Heritage</span>
+          <h4>Kerala culinary tradition</h4>
+          <p>Recipes rooted in Malabar and Travancore households, kept intact across generations.</p>
+        </div>
+        <div class="timeline-item">
+          <span>Sourcing</span>
+          <h4>Fresh, honest ingredients</h4>
+          <p>Coconut, curry leaf, and spice sourced daily — nothing frozen, nothing rushed.</p>
+        </div>
+        <div class="timeline-item">
+          <span>Hospitality</span>
+          <h4>A table for every family</h4>
+          <p>Warm, unhurried service in a space built for regulars and first-timers alike.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="stats-row reveal-stagger">
+      <div class="stat-item"><div class="stat-num" data-count="1000">0</div><div class="stat-label">Happy Guests</div></div>
+      <div class="stat-item"><div class="stat-num" data-count="45">0</div><div class="stat-label">Signature Dishes</div></div>
+      <div class="stat-item"><div class="stat-num" data-count="4.6" data-decimal="1">0</div><div class="stat-label">Average Rating</div></div>
+      <div class="stat-item"><div class="stat-num" data-count="12">0</div><div class="stat-label">Years Serving Mysuru</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MENU ============ -->
+<section class="menu-section section-pad" id="menu">
+  <div class="container">
+    <div class="sec-head reveal">
+      <p class="eyebrow">The Menu</p>
+      <h2>Signature Kerala Flavours</h2>
+      <p>From chatti choru to backwater fish curry — every dish plated the way it's eaten back home. Tap the plus to add straight to your order.</p>
+    </div>
+
+    <div class="menu-controls reveal">
+      <div class="menu-tabs" id="menuTabs">
+        <button class="menu-tab active" data-cat="all">All</button>
+        <button class="menu-tab" data-cat="Kerala Specials">Kerala Specials</button>
+        <button class="menu-tab" data-cat="Chicken">Chicken</button>
+        <button class="menu-tab" data-cat="Seafood">Seafood</button>
+        <button class="menu-tab" data-cat="Beef & Mutton">Beef & Mutton</button>
+        <button class="menu-tab" data-cat="Rice">Rice</button>
+        <button class="menu-tab" data-cat="Bread">Bread</button>
+        <button class="menu-tab" data-cat="Drinks">Drinks</button>
+        <button class="menu-tab" data-cat="Desserts">Desserts</button>
+      </div>
+      <div class="menu-search">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="text" id="menuSearch" placeholder="Search dishes…">
+      </div>
+    </div>
+
+    <div class="menu-filters reveal">
+      <button class="chip active" data-filter="all">All Dishes</button>
+      <button class="chip" data-filter="veg">🟢 Veg</button>
+      <button class="chip" data-filter="nonveg">🔴 Non-Veg</button>
+      <button class="chip" data-filter="wishlist">♥ Wishlist</button>
+    </div>
+
+    <div class="menu-grid" id="menuGrid"></div>
+
+    <div class="menu-cta-row reveal">
+      <button class="btn btn-outline" style="color:var(--ivory); border-color:rgba(255,255,255,.3);" id="loadMoreBtn">View Full Menu</button>
+    </div>
+  </div>
+</section>
+
+<div class="kera-divider flip"><svg viewBox="0 0 1440 90" preserveAspectRatio="none"><path d="M0,50 C 240,90 480,10 720,45 C 960,80 1200,15 1440,50 L1440,0 L0,0 Z" fill="var(--bg)"/></svg></div>
+
+<!-- ============ GALLERY ============ -->
+<section class="section-pad" id="gallery">
+  <div class="container">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Gallery</p>
+      <h2>A Look Inside Cloverdale</h2>
+      <p>From the kitchen pass to the last table on a Friday night — a peek at the place and the plates.</p>
+    </div>
+    <div class="gallery-filters reveal">
+      <button class="gfilter active" data-gcat="all">All</button>
+      <button class="gfilter" data-gcat="Food">Food</button>
+      <button class="gfilter" data-gcat="Restaurant">Restaurant</button>
+      <button class="gfilter" data-gcat="Ambience">Ambience</button>
+      <button class="gfilter" data-gcat="Kitchen">Kitchen</button>
+      <button class="gfilter" data-gcat="Events">Events</button>
+    </div>
+    <div class="masonry" id="masonryGrid"></div>
+  </div>
+</section>
+
+<div id="lightbox">
+  <button class="lb-close" id="lbClose" aria-label="Close">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+  </button>
+  <button class="lb-nav lb-prev" id="lbPrev" aria-label="Previous">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+  </button>
+  <img id="lbImg" src="" alt="">
+  <button class="lb-nav lb-next" id="lbNext" aria-label="Next">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+  </button>
+</div>
+
+<!-- ============ RESERVATIONS ============ -->
+<section class="reservation section-pad" id="reservations">
+  <div class="container res-grid">
+    <div class="res-info reveal">
+      <p class="eyebrow">Book a Table</p>
+      <h2>Reserve Your Evening</h2>
+      <p>Tell us when you're coming and how many of you there are — we'll hold the table and have it ready with a glass of fresh lime soda.</p>
+      <div class="res-perks">
+        <div class="res-perk">
+          <div class="res-perk-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.362 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
+          <div><h5>Confirmed by call</h5><p>We confirm every booking personally within 30 minutes.</p></div>
+        </div>
+        <div class="res-perk">
+          <div class="res-perk-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+          <div><h5>Family-friendly</h5><p>High chairs, kids' portions, and space for large groups.</p></div>
+        </div>
+        <div class="res-perk">
+          <div class="res-perk-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4.5 8-11.8A8 8 0 004 10.2C4 17.5 12 22 12 22z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div><h5>Walk-ins welcome</h5><p>Prefer to book ahead? We'll always hold a few walk-in tables too.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <form class="res-form reveal" id="reservationForm">
+      <div class="form-row">
+        <div class="field"><label for="rName">Name</label><input id="rName" required placeholder="Your full name"></div>
+        <div class="field"><label for="rPhone">Phone</label><input id="rPhone" required type="tel" placeholder="+91 00000 00000"></div>
+      </div>
+      <div class="form-row">
+        <div class="field" style="grid-column:1/-1;"><label for="rEmail">Email</label><input id="rEmail" type="email" placeholder="you@example.com"></div>
+      </div>
+      <div class="form-row">
+        <div class="field"><label for="rDate">Date</label><input id="rDate" required type="date"></div>
+        <div class="field"><label for="rTime">Time</label><input id="rTime" required type="time"></div>
+      </div>
+      <div class="form-row">
+        <div class="field"><label for="rGuests">Guests</label>
+          <select id="rGuests">
+            <option>1 Guest</option><option>2 Guests</option><option selected>3 Guests</option>
+            <option>4 Guests</option><option>5 Guests</option><option>6+ Guests</option>
+          </select>
+        </div>
+        <div class="field"><label for="rTable">Seating</label>
+          <select id="rTable"><option>No preference</option><option>Window seat</option><option>Family section</option><option>Outdoor patio</option></select>
+        </div>
+      </div>
+      <div class="field"><label for="rNote">Special request</label><textarea id="rNote" rows="3" placeholder="Anniversary, allergies, high chair…"></textarea></div>
+
+      <div class="tables-live"><span class="pulse-dot"></span> <span id="tablesLiveText">6 tables currently available for tonight</span></div>
+
+      <button type="submit" class="btn btn-solid" style="width:100%;">Confirm Reservation</button>
+    </form>
+  </div>
+</section>
+
+<!-- ============ REVIEWS ============ -->
+<section class="reviews section-pad" id="reviews">
+  <div class="container">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Guest Reviews</p>
+      <h2>What Mysuru is Saying</h2>
+    </div>
+    <div class="rating-hero reveal">
+      <div class="rating-big">4.6</div>
+      <div>
+        <div class="stars">★★★★★</div>
+        <p style="color:var(--text-soft); font-size:.9rem; margin-top:4px;">Based on 1,000+ verified reviews</p>
+      </div>
+    </div>
+    <div class="review-track reveal-stagger" id="reviewTrack"></div>
+  </div>
+</section>
+
+<div class="kera-divider"><svg viewBox="0 0 1440 90" preserveAspectRatio="none"><path d="M0,50 C 240,90 480,10 720,45 C 960,80 1200,15 1440,50 L1440,0 L0,0 Z" fill="var(--charcoal)"/></svg></div>
+
+<!-- ============ CONTACT ============ -->
+<section class="contact section-pad" id="contact">
+  <div class="container">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Visit Us</p>
+      <h2>Find Cloverdale Cuisine</h2>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-map reveal">
+        <iframe src="https://www.google.com/maps?q=2759/2,+Kalidasa+Road,+Vani+Vilas+Mohalla,+Mysuru,+Karnataka+570002&output=embed" loading="lazy" allowfullscreen title="Cloverdale Cuisine location map"></iframe>
+      </div>
+      <div class="contact-info-card reveal">
+        <div class="info-row">
+          <div class="info-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div><h5>Address</h5><p>2759/2, Kalidasa Road, Vani Vilas Mohalla, Mysuru, Karnataka – 570002</p></div>
+        </div>
+        <div class="info-row">
+          <div class="info-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.362 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
+          <div><h5>Phone</h5><a href="tel:+919380610979">+91 93806 10979</a></div>
+        </div>
+        <div class="info-row">
+          <div class="info-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+          <div><h5>Hours</h5><p>Open daily · 10:00 AM – 10:00 PM</p></div>
+        </div>
+        <div class="social-row">
+          <a class="social-icon" href="#" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+          <a class="social-icon" href="#" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+          <a class="social-icon" href="#" aria-label="WhatsApp"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg></a>
+        </div>
+        <form class="contact-form-mini" id="contactForm">
+          <input type="text" placeholder="Your name" required>
+          <input type="email" placeholder="Your email" required>
+          <textarea rows="3" placeholder="Your message" required></textarea>
+          <button type="submit" class="btn btn-dark btn-sm">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="footer-logo">
+          <svg width="30" height="30" viewBox="0 0 100 100" fill="none"><path d="M50 8 C 22 24, 16 56, 50 92 C 84 56, 78 24, 50 8 Z" stroke="#D4AF37" stroke-width="3"/></svg>
+          Cloverdale Cuisine
+        </div>
+        <p class="footer-desc">Experience the Authentic Taste of Kerala — dine-in, takeaway, kerbside pickup and no-contact delivery in Mysuru.</p>
+        <div class="newsletter-row">
+          <input type="email" placeholder="Your email" id="newsletterInput">
+          <button id="newsletterBtn">Join</button>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Quick Links</h5>
+        <ul>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#reservations">Reservations</a></li>
+          <li><a href="#reviews">Reviews</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Menu</h5>
+        <ul>
+          <li><a href="#menu">Kerala Specials</a></li>
+          <li><a href="#menu">Seafood</a></li>
+          <li><a href="#menu">Beef & Mutton</a></li>
+          <li><a href="#menu">Rice & Bread</a></li>
+          <li><a href="#menu">Desserts</a></li>
+        </ul>
+        <h5 style="margin-top:26px;">Hours</h5>
+        <p style="font-size:.85rem;">Mon – Sun<br>10:00 AM – 10:00 PM</p>
+      </div>
+      <div class="footer-col">
+        <h5>Follow Along</h5>
+        <div class="insta-grid">
+          <img src="https://images.unsplash.com/photo-1585032226651-759b368d7246?q=80&w=200&auto=format&fit=crop" alt="">
+          <img src="https://images.unsplash.com/photo-1631515243349-e0cb75fb8d3a?q=80&w=200&auto=format&fit=crop" alt="">
+          <img src="https://images.unsplash.com/photo-1567337710282-00832b415979?q=80&w=200&auto=format&fit=crop" alt="">
+          <img src="https://images.unsplash.com/photo-1596797038530-2c107229654b?q=80&w=200&auto=format&fit=crop" alt="">
+          <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?q=80&w=200&auto=format&fit=crop" alt="">
+          <img src="https://images.unsplash.com/photo-1613514785940-daed07799d9b?q=80&w=200&auto=format&fit=crop" alt="">
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Cloverdale Cuisine. All rights reserved.</span>
+      <div style="display:flex; gap:20px;">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ FLOATING BUTTONS ============ -->
+<div class="floating-stack">
+  <button class="fab fab-top" id="backToTop" aria-label="Back to top">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
+  </button>
+  <a class="fab fab-call" href="tel:+919380610979" aria-label="Call restaurant">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.362 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+  </a>
+  <a class="fab fab-whatsapp" href="https://wa.me/919380610979" target="_blank" rel="noopener" aria-label="WhatsApp us">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.28-1.38a9.9 9.9 0 004.76 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0012.04 2z"/></svg>
+  </a>
+</div>
+
+<!-- ============ CART DRAWER ============ -->
+<div class="cart-overlay" id="cartOverlay"></div>
+<aside class="cart-drawer" id="cartDrawer" aria-label="Your order">
+  <div class="cart-head">
+    <h3>Your Order</h3>
+    <button class="cart-close" id="cartClose" aria-label="Close cart">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </div>
+  <div class="cart-items" id="cartItems">
+    <div class="cart-empty">Your cart is empty. Add a dish from the menu to get started.</div>
+  </div>
+  <div class="cart-footer">
+    <div class="coupon-row">
+      <input type="text" id="couponInput" placeholder="Coupon code">
+      <button class="btn btn-ghost btn-sm" id="applyCoupon">Apply</button>
+    </div>
+    <div class="cart-total-row"><span>Subtotal</span><span id="cartSubtotal">₹0</span></div>
+    <button class="btn btn-solid" id="checkoutBtn" style="width:100%;">Proceed to Checkout</button>
+  </div>
+</aside>
+
+<script src="js/script.js"></script>
+
+</body>
+</html>
+
+
+
+
+
